@@ -1,5 +1,5 @@
 const faker = require('faker');
-const db = require('./index.js')
+const db = require('./index.js');
 let seeder = () => {
   for (let i = 0; i < 100; i++) {
     let newPlace = new db.relatedPlaces({
