@@ -2,11 +2,11 @@ import React from 'react';
 import MorePlacesEntry from './morePlacesEntry.jsx';
 
 let MorePlaces = (props) => (
-  <ul>
-    {props.places.map( (place) => {
-      <MorePlacesEntry place={place} />
-    })}
-  </ul>
+  <div>
+    {props.places.map( (place) =>
+      <MorePlacesEntry key={place.propertyId} place={place} />
+    )}
+  </div>
 )
 
 export default MorePlaces;

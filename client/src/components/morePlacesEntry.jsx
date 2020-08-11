@@ -1,11 +1,16 @@
 import React from 'react';
 
 let MorePlacesEntry = (props) => (
-  <li class="column">
-    <img src={props.place.img}></img>
-    {console.log(props.place.img)}
-    <h1>this should show</h1>
-  </li>
+  <div className="columngroup">
+    <div className="column">
+      <div className="image">
+        <a href={`${props.place.propertyId}`}><img className="propertyImg" src={props.place.img}></img></a>
+      </div>
+      <div className="property-description">
+
+      </div>
+    </div>
+  </div>
 )
 
 export default MorePlacesEntry;

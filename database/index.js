@@ -3,7 +3,7 @@ const faker = require('faker');
 mongoose.connect('mongodb://localhost/morePlaces');
 
 let morePlaces = mongoose.Schema({
-  _id: Number,
+  propertyId: Number,
   img: String,
   isSuperHost: Boolean,
   propertyType: String,
@@ -37,7 +37,7 @@ let getAllProperties = (callback) => {
             if (randomNum === i) {
               return randomNumGen();
             } else {
-            results[i].similarPlaces.push(results[randomNum]._id);
+            results[i].similarPlaces.push(results[randomNum].propertyId);
             results[i].save( (err) => {
               if (err) {
                 console.log('')

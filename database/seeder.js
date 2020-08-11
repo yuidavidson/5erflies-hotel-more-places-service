@@ -3,7 +3,7 @@ const db = require('./index.js');
 let seeder = () => {
   for (let i = 0; i < 100; i++) {
     let newPlace = new db.relatedPlaces({
-      _id: i,
+      propertyId: i,
       img: faker.address.propertyImg(),
       isSuperHost: faker.random.boolean(),
       propertyType: faker.address.propertyType(),

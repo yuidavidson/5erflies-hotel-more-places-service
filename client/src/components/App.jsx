@@ -19,17 +19,17 @@ class App extends React.Component {
       .catch(console.log)
   }
   setProperties(properties) {
-    this.setState({properties: properties.data})
+    this.setState({properties: properties.data});
     console.log(this.state.properties);
   }
 
   componentDidMount() {
     this.getProperties();
   }
+
   render() {
-    return(
+    return (
       <div>
-        <h1>Hello</h1>
         <MorePlaces places={this.state.properties}/>
       </div>
     )
