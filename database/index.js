@@ -29,15 +29,23 @@ let getAllProperties = (callback) => {
         for (let j = 0; j < 12; j++) {
           // console.log(results, 'results ')
           // console.log(randomNum)
-          let recursive = () => {
+          let randomNumGen = () => {
+            if (results[i].similarPlaces.length > 12) {
+              return;
+            }
             let randomNum = Math.floor(Math.random() * Math.floor(results.length))
             if (randomNum === i) {
-              return recursive();
+              return randomNumGen();
             } else {
             results[i].similarPlaces.push(results[randomNum]._id);
+            results[i].save( (err) => {
+              if (err) {
+                console.log('')
+              }
+            })
             }
           }
-          recursive();
+          randomNumGen();
         }
       }
       // console.log(faker.random.arrayElement(results), 'results')

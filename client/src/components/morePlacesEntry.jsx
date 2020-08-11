@@ -1,10 +1,11 @@
 import React from 'react';
 
 let MorePlacesEntry = (props) => (
-  <div class="column">
+  <li class="column">
     <img src={props.place.img}></img>
     {console.log(props.place.img)}
-  </div>
+    <h1>this should show</h1>
+  </li>
 )
 
 export default MorePlacesEntry;

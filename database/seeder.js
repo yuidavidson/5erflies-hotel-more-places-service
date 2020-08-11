@@ -22,6 +22,7 @@ let seeder = () => {
         max: 400
       })
     })
+
     newPlace.save( (err) => {
       if(err) {
         console.log('err');
@@ -29,5 +30,6 @@ let seeder = () => {
     })
   }
 }
+
 seeder();
 module.exports.seeder = seeder;
