@@ -12,16 +12,19 @@ let logRequests = (req, res, next) => {
   next();
 }
 app.use(logRequests);
-app.use(express.static(path.join(__dirname, './client/dist')))
+app.use(express.static(path.join(__dirname, '../client/dist')))
 
 
 // create routes
+app.get('/', (req, res) => {
+  res.send();
+})
+
 app.get('/test-seeder', (req, res) => {
   db.getAllProperties( (err, results) => {
     if(err) {
       console.log(err);
     } else {
-      console.log(results)
       res.status(200).send(results);
     }
   })
