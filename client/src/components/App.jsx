@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import MorePlaces from './morePlaces.jsx';
+import Button from '../styleComponents/Button.js';
+import Wrapper from '../styleComponents/Wrapper.js';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props),
     this.state = {
-      properties: []
+      properties: [],
+      property: null
     },
 
     this.setProperties = this.setProperties.bind(this);
@@ -23,15 +26,27 @@ class App extends React.Component {
     console.log(this.state.properties);
   }
 
+  getProperty() {
+    axios.get('/test1')
+    .then(this.setProperty)
+    .catch(console.log)
+  }
+  setProperty(property) {
+    this.setState({property: property.data})
+  }
+
   componentDidMount() {
     this.getProperties();
   }
 
+
+
   render() {
     return (
-      <div>
+      <Wrapper>
         <MorePlaces places={this.state.properties}/>
-      </div>
+        <Button>Click</Button>
+      </Wrapper>
     )
   }
 }
