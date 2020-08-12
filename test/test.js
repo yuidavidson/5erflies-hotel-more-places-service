@@ -4,7 +4,6 @@ import { configure, shallow } from 'enzyme';
 
 // import components
 import MorePlacesEntry from '../client/src/components/morePlacesEntry.jsx'
-const sum = require('./sum');
 configure({ adapter: new Adapter() });
 
 
@@ -47,13 +46,9 @@ describe('MorePlacesEntry Test Suite', () => {
   //   const { wrapper } = setup();
   //   expect(wrapper.find('img').props.exists()).toBe(true);
   // });
-  it('should have 12 related properties', () => {
+  it('should have render an image', () => {
     const component = shallow(<MorePlacesEntry place={mockPlace}/>);
     console.log(component)
-    expect(mockPlace.similarPlaces).toHaveLength(12);
+    expect(component.find("img").exists(true));
   })
-});
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
 });
