@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/TomNguyen21/5erflies-hotel-more-places-service#readme",
   "dependencies": {
-    "@babel/preset-react": "^7.10.4",
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "faker": "^4.1.0",
@@ -33,7 +32,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
+    "@babel/plugin-syntax-jsx": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
