@@ -17,14 +17,24 @@ const morePlaces = mongoose.Schema({
 
 const relatedPlaces = mongoose.model('MorePlaces', morePlaces);
 
+const getProperty = (req, callback) => {
+  relatedPlaces.find({propertyId: req.propertyId}, (err, results) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, results);
+    }
+  })
+}
+
 const getAllProperties = (callback) => {
   relatedPlaces.find({}, (err, results) => {
     if (err) {
       callback(err);
     } else {
       const { length } = results;
-      for (let i = 0; i < length; i++) {
-        for (let j = 0; j < 12; j++) {
+      for (let i = 0; i < length; i += 1) {
+        for (let j = 0; j < 12; j += 1) {
           // console.log(results, 'results ')
           // console.log(randomNum)
           const randomNumGen = () => {
@@ -36,9 +46,9 @@ const getAllProperties = (callback) => {
               return randomNumGen();
             }
             results[i].similarPlaces.push(results[randomNum].propertyId);
-            results[i].save((err) => {
-              if (err) {
-                console.log('');
+            results[i].save((error) => {
+              if (error) {
+                console.error('');
               }
             });
           };
@@ -51,5 +61,6 @@ const getAllProperties = (callback) => {
   });
 };
 
+module.exports.getProperty = getProperty;
 module.exports.relatedPlaces = relatedPlaces;
 module.exports.getAllProperties = getAllProperties;

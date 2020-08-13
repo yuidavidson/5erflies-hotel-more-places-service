@@ -5,7 +5,7 @@ let MorePlacesEntry = (props) => (
   <div className="container">
     <div className="column">
       <div className="image">
-        <a href={`${props.place.propertyId}`}><Image src={props.place.img} /></a>
+        <a href={`?propertyId=${props.place.propertyId}`}><Image src={props.place.img} /></a>
       </div>
       <div className="property-description">
         <div>{props.place.propertyType} {props.place.numOfRooms} rooms</div>
