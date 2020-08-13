@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1597214040444" clover="3.2.0">
-  <project timestamp="1597214040444" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="2" files="2" classes="2"/>
-    <package name="components">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="morePlacesEntry.jsx" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/components/morePlacesEntry.jsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="styleComponents">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="Image.js" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/styleComponents/Image.js">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      </file>
-    </package>
+<coverage generated="1597295068530" clover="3.2.0">
+  <project timestamp="1597295068530" name="All files">
+    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
   </project>
 </coverage>
