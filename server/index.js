@@ -19,7 +19,6 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //GET request for one property
 app.get('/test1', (req, res) => {
-  console.log(req.query)
   db.getProperty(req.query, (err, results) => {
     if (err) {
       console.log(err);

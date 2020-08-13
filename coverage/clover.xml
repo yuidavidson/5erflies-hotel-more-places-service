@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1597295068530" clover="3.2.0">
-  <project timestamp="1597295068530" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1597340959285" clover="3.2.0">
+  <project timestamp="1597340959285" name="All files">
+    <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7" elements="21" coveredelements="19" complexity="0" loc="13" ncloc="13" packages="2" files="6" classes="6"/>
+    <package name="components">
+      <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="7"/>
+      <file name="App.jsx" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/components/App.jsx">
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+      </file>
+      <file name="morePlaces.jsx" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/components/morePlaces.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="morePlacesEntry.jsx" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/components/morePlacesEntry.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="styleComponents">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Button.js" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/styleComponents/Button.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Image.js" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/styleComponents/Image.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Wrapper.js" path="/Users/tomnguyen/Desktop/HRSF129 Repos/5erflies-hotel-more-places-service/client/src/styleComponents/Wrapper.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
   </project>
 </coverage>

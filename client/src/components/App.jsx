@@ -12,20 +12,20 @@ class App extends React.Component {
     super(props);
     this.state = {
       properties: [],
-      // property: null,
+      property: [],
       // relatedProperties: []
     },
 
     this.setProperties = this.setProperties.bind(this);
     this.getProperties = this.getProperties.bind(this);
-    // this.setProperty = this.setProperty.bind(this);
-    // this.getProperty = this.getProperty.bind(this);
+    this.setProperty = this.setProperty.bind(this);
+    this.getProperty = this.getProperty.bind(this);
     // this.setRelatedProperties = this.setRelatedProperties.bind(this);
   }
 
   componentDidMount() {
     this.getProperties();
-    // this.getProperty();
+    this.getProperty();
   }
 
   getProperties() {
@@ -38,19 +38,16 @@ class App extends React.Component {
     this.setState({ properties: properties.data });
   }
 
-  // getProperty() {
-  //   axios.get(`/test1/${query}`)
-  //     .then( (result) => {
-  //       this.setProperty(result);
-  //       return this.state.property;
-  //     })
-  //     // .then(this.setRelatedProperties)
-  //     .catch(err);
-  // }
+  getProperty() {
+    axios.get(`/test1/${query}`)
+      .then(this.setProperty)
+      .catch(console.log);
+  }
 
-  // setProperty(property) {
-  //   this.setState({ property: property.data[0] });
-  // }
+  setProperty(property) {
+    this.setState({ property: property.data });
+    console.log(this.state.property)
+  }
 
   // setRelatedProperties() {
   //   for (let i = 0; i < this.state.property.similarPlaces.length; i += 1) {
@@ -68,7 +65,7 @@ class App extends React.Component {
   render() {
     return (
       <Wrapper>
-        <MorePlaces places={this.state.properties} />
+        <MorePlaces places={this.state.property} />
         <Button>Click</Button>
       </Wrapper>
     )
