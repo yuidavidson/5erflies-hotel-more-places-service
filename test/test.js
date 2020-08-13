@@ -3,7 +3,9 @@ import Adapter from 'enzyme-adapter-react-16';
 import { configure, shallow } from 'enzyme';
 
 // import components
-import MorePlacesEntry from '../client/src/components/morePlacesEntry.jsx'
+import App from '../client/src/components/App.jsx';
+import MorePlaces from '../client/src/components/morePlaces.jsx';
+import MorePlacesEntry from '../client/src/components/morePlacesEntry.jsx';
 configure({ adapter: new Adapter() });
 
 
