@@ -1,12 +1,13 @@
 import React from 'react';
 import MorePlacesEntry from './morePlacesEntry.jsx';
+import Column from '../styleComponents/Column.js';
 
 let MorePlaces = (props) => (
-  <div>
+  <Column>
     {props.places.map( (place) =>
       <MorePlacesEntry key={place.propertyId} place={place} />
     )}
-  </div>
+  </Column>
 )
 
 export default MorePlaces;

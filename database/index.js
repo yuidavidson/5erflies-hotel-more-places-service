@@ -51,7 +51,7 @@ const getAllProperties = (callback) => {
           // console.log(results, 'results ')
           // console.log(randomNum)
           const randomNumGen = () => {
-            if (results[i].similarPlaces.length > 12) {
+            if (results[i].similarPlaces.length >= 12) {
               return;
             }
             const randomNum = Math.floor(Math.random() * Math.floor(results.length));

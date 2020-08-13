@@ -4,6 +4,7 @@ import axios from 'axios';
 import MorePlaces from './morePlaces.jsx';
 import Button from '../styleComponents/Button.js';
 import Wrapper from '../styleComponents/Wrapper.js';
+import Column from '../styleComponents/Column.js';
 
 let query = window.location.search;
 
@@ -64,10 +65,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <Column>
         <MorePlaces places={this.state.property} />
-        <Button>Click</Button>
-      </Wrapper>
+      </Column>
     )
   }
 }
