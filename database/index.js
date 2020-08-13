@@ -22,7 +22,20 @@ const getProperty = (req, callback) => {
     if (err) {
       callback(err);
     } else {
-      callback(null, results);
+      let newArray = [];
+      for (let i = 0; i < results[0].similarPlaces.length; i += 1) {
+        //able to find the specified listing but not able to push into array. How would I do that?
+        relatedPlaces.find({ propertyId: results[0].similarPlaces[i] }, (err, result) => {
+          if (err) {
+            callback(err);
+          } else {
+            newArray.push(result[0]);
+          };
+        });
+      };
+      setTimeout( () => {
+        callback(null, newArray);
+      }, 1000)
     }
   })
 }

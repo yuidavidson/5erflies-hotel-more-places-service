@@ -16,6 +16,8 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 
 // create routes
+
+//GET request for one property
 app.get('/test1', (req, res) => {
   console.log(req.query)
   db.getProperty(req.query, (err, results) => {
@@ -27,6 +29,7 @@ app.get('/test1', (req, res) => {
   })
 })
 
+//GET request for all properties
 app.get('/test-seeder', (req, res) => {
   db.getAllProperties( (err, results) => {
     if(err) {
