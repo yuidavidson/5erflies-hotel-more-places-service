@@ -1,13 +1,18 @@
 import React from 'react';
 import MorePlacesEntry from './morePlacesEntry.jsx';
-import Column from '../styleComponents/Column.js';
+import styled from 'styled-components';
 
 let MorePlaces = (props) => (
-  <Column>
+  <Wrapper>
     {props.places.map( (place) =>
       <MorePlacesEntry key={place.propertyId} place={place} />
     )}
-  </Column>
+  </Wrapper>
 )
+
+const Wrapper = styled.div`
+display: flex;
+flex-direction: row;
+`;
 
 export default MorePlaces;

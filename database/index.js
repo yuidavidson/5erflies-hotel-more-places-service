@@ -61,7 +61,7 @@ const getAllProperties = (callback) => {
             results[i].similarPlaces.push(results[randomNum].propertyId);
             results[i].save((error) => {
               if (error) {
-                console.error('');
+                console.error(error);
               }
             });
           };

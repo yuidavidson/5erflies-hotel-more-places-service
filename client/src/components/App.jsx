@@ -2,9 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import MorePlaces from './morePlaces.jsx';
-import Button from '../styleComponents/Button.js';
-import Wrapper from '../styleComponents/Wrapper.js';
-import Column from '../styleComponents/Column.js';
+import styled from 'styled-components';
 
 let query = window.location.search;
 
@@ -65,11 +63,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <Column>
+      <Wrapper>
         <MorePlaces places={this.state.property} />
-      </Column>
+      </Wrapper>
     )
   }
 }
+
+const Wrapper = styled.div`
+display: flex;
+flex-direction: row;
+`;
+
+
 
 export default App;
