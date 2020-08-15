@@ -8,6 +8,7 @@ class MorePlaces extends React.Component {
     this.state = {
       pageNum: 0
     }
+
     this.nextArrowClick = this.nextArrowClick.bind(this);
     this.prevArrowClick = this.prevArrowClick.bind(this);
   }
@@ -18,24 +19,51 @@ class MorePlaces extends React.Component {
 
   prevArrowClick() {
     this.setState({ pageNum: (this.state.pageNum - 1) % 3 });
+    console.log(this.state.pageNum)
     if (this.state.pageNum < 0) {
       this.setState({ pageNum: (this.state.pageNum + 3) });
     }
   }
 
   render() {
-
-    return (
-      <div>
-        <NavBar><PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
-      <Wrapper>
-
-        {this.props.places.map( (place) =>
-          <MorePlacesEntry key={place.propertyId} place={place} />
-        )}
-      </Wrapper>
-      </div>
-    )
+    console.log(this.props.places.slice(8))
+    if (this.state.pageNum === 0) {
+      let firstPage = this.props.places.slice(0, 4);
+      return (
+        <div>
+          <NavBar><PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+        <Wrapper>
+          {firstPage.map( (place) =>
+            <MorePlacesEntry key={place.propertyId} place={place} />
+          )}
+        </Wrapper>
+        </div>
+      )
+    } else if (this.state.pageNum === 1) {
+      let secondPage = this.props.places.slice(4, 8);
+      return (
+        <div>
+          <NavBar><PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+        <Wrapper>
+          {secondPage.map( (place) =>
+            <MorePlacesEntry key={place.propertyId} place={place} />
+          )}
+        </Wrapper>
+        </div>
+      )
+    } else if (this.state.pageNum === 2 || this.state.pageNum === -1) {
+      let thirdPage = this.props.places.slice(8);
+      return (
+        <div>
+          <NavBar><PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+        <Wrapper>
+          {thirdPage.map( (place) =>
+            <MorePlacesEntry key={place.propertyId} place={place} />
+          )}
+        </Wrapper>
+        </div>
+      )
+    }
   }
 }
 
