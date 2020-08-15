@@ -19,14 +19,22 @@ let MorePlacesEntry = (props) => (
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  margin: auto;
-  flex: 1;
-  min-width: 150px;
+  border-width: 0px 10px;
+  flex: {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.333%;
+  };
+  max-width: 33.333%;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 10px 0 10px;
 `;
 const Image = styled.img`
   height: 150px;
-  width: 150px;
-  border-radius: 10px;
+  width: 225px;
+  border-radius: 8px;
 `;
 
 const Price = styled.span`
