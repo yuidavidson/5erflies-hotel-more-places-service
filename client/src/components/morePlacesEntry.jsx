@@ -9,13 +9,14 @@ let MorePlacesEntry = (props) => (
       </div>
       <div className="property-description">
         <div>{props.place.propertyType} • {props.place.numOfRooms} beds</div>
-        <div>{props.place.rating} ({props.place.numOfRatings})</div>
+        <div><StarImg src={star} /> {props.place.rating} ({props.place.numOfRatings})</div>
         <div>{props.place.description}</div>
         <div><Price>${props.place.price}</Price> / night</div>
       </div>
     </div>
   </Card>
 )
+let star = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Screen+Shot+2020-08-14+at+9.41.44+PM.png"
 const Card = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,7 +37,11 @@ const Image = styled.img`
   width: 225px;
   border-radius: 8px;
 `;
-
+const StarImg = styled.img`
+  height: 14px;
+  width: 14px;
+  line-height: 0px;
+`
 const Price = styled.span`
   font-weight: bold;
 `;

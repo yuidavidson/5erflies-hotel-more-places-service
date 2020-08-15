@@ -31,7 +31,7 @@ class MorePlaces extends React.Component {
       let firstPage = this.props.places.slice(0, 4);
       return (
         <div>
-          <NavBar><PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
         <Wrapper>
           {firstPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -43,7 +43,7 @@ class MorePlaces extends React.Component {
       let secondPage = this.props.places.slice(4, 8);
       return (
         <div>
-          <NavBar><PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
         <Wrapper>
           {secondPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -55,7 +55,7 @@ class MorePlaces extends React.Component {
       let thirdPage = this.props.places.slice(8);
       return (
         <div>
-          <NavBar><PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
         <Wrapper>
           {thirdPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
