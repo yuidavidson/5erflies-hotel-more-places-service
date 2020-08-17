@@ -26,7 +26,7 @@ const seeder = () => {
 
     newPlace.save((err) => {
       if (err) {
-        console.log('err');
+        console.log(err);
       }
     });
   }

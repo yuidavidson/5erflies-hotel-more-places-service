@@ -55,7 +55,7 @@ const getAllProperties = (callback) => {
               return;
             }
             const randomNum = Math.floor(Math.random() * Math.floor(results.length));
-            if (randomNum === i) {
+            if (randomNum === i || results[i].similarPlaces.indexOf(randomNum) !== -1) {
               return randomNumGen();
             }
             results[i].similarPlaces.push(results[randomNum].propertyId);

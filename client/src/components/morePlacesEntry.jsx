@@ -44,9 +44,7 @@ const Image = styled.img`
 const HeartImg = styled.img`
   height: 14px;
   width: 16px;
-  position: relative;
-  bottom: 85%;
-  left: 85%;
+  position: absolute;
   z-index: 1;
 `
 const StarImg = styled.img`
