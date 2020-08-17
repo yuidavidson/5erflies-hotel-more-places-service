@@ -40,49 +40,7 @@ let MorePlacesEntry = (props) => {
       return null;
   }
 }
-// class MorePlacesEntry extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
 
-//     };
-//   }
-
-//   render() {
-//     if (this.props.place.isSuperHost) {
-//       return (
-//         <Card>
-//           <ImageContainer>
-//             <SuperHost><SuperHostCon>SUPERHOST</SuperHostCon></SuperHost>
-//             <HeartImg src={heartImg} />
-//             <a href={`?propertyId=${this.props.place.propertyId}`}><Image src={this.props.place.img} /></a>
-//           </ImageContainer>
-//           <div className="property-description">
-//             <div>{this.props.place.propertyType} • {this.props.place.numOfRooms} beds</div>
-//             <div><StarImg src={starImg} /> {this.props.place.rating} <NumRatings>({this.props.place.numOfRatings})</NumRatings></div>
-//             <div>{this.props.place.description}</div>
-//             <div><Price>${this.props.place.price}</Price> / night</div>
-//           </div>
-//         </Card>
-//       )
-//     } else {
-//       return (
-//         <Card>
-//           <ImageContainer>
-//             <HeartImg src={heartImg} />
-//             <a href={`?propertyId=${this.props.place.propertyId}`}><Image src={this.props.place.img} /></a>
-//           </ImageContainer>
-//           <div className="property-description">
-//             <div>{this.props.place.propertyType} • {this.props.place.numOfRooms} beds</div>
-//             <div><StarImg src={starImg} /> {this.props.place.rating} <NumRatings>({this.props.place.numOfRatings})</NumRatings></div>
-//             <div>{this.props.place.description}</div>
-//             <div><Price>${this.props.place.price}</Price> / night</div>
-//           </div>
-//         </Card>
-//       )
-//     }
-//   }
-// }
 let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Screen+Shot+2020-08-14+at+9.41.44+PM.png";
 let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
 
@@ -118,9 +76,9 @@ const SuperHost = styled.div`
   position: absolute;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   background-color: rgba(255, 255, 255, 0.95);
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px;
   color: rgb(34, 34, 34);
   z-index: 1;
 `;
