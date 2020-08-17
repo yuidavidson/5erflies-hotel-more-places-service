@@ -19,19 +19,17 @@ class MorePlaces extends React.Component {
 
   prevArrowClick() {
     this.setState({ pageNum: (this.state.pageNum - 1) % 3 });
-    console.log(this.state.pageNum)
-    if (this.state.pageNum < 0) {
-      this.setState({ pageNum: (this.state.pageNum + 3) });
+    if (this.state.pageNum <= 0) {
+      this.setState({ pageNum: 2 });
     }
   }
 
   render() {
-    console.log(this.props.places.slice(8))
     if (this.state.pageNum === 0) {
       let firstPage = this.props.places.slice(0, 4);
       return (
         <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
         <Wrapper>
           {firstPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -43,7 +41,7 @@ class MorePlaces extends React.Component {
       let secondPage = this.props.places.slice(4, 8);
       return (
         <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
         <Wrapper>
           {secondPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -51,11 +49,11 @@ class MorePlaces extends React.Component {
         </Wrapper>
         </div>
       )
-    } else if (this.state.pageNum === 2 || this.state.pageNum === -1) {
+    } else if (this.state.pageNum === 2) {
       let thirdPage = this.props.places.slice(8);
       return (
         <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>prev</PrevButton><NextButton onClick={this.nextArrowClick}>next</NextButton></NavBar>
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
         <Wrapper>
           {thirdPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -74,21 +72,25 @@ const NavBar = styled.div`
 `;
 
 const PrevButton = styled.button`
-  border-radus: 50%;
   border: 1px solid #C5C5C5;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-weight: 400;
   font-size: 16px;
+  height: 30px;
+  width: 30px;
   margin-right: 5px;
+  border-radius: 50%;
 `;
 
 const NextButton = styled.button`
-  border-radus: 50%;
   border: 1px solid #C5C5C5;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-weight: 400;
   font-size: 16px;
+  height: 30px;
+  width: 30px;
   margin-left: 5px;
+  border-radius: 50%;
 `;
 
 const Wrapper = styled.div`

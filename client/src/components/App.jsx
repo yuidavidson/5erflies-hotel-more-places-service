@@ -4,7 +4,7 @@ import axios from 'axios';
 import MorePlaces from './morePlaces.jsx';
 import styled from 'styled-components';
 
-let query = window.location.search;
+let query = window.location.search || "?propertyId=0";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,14 +12,12 @@ class App extends React.Component {
     this.state = {
       properties: [],
       property: [],
-      // relatedProperties: []
     },
 
     this.setProperties = this.setProperties.bind(this);
     this.getProperties = this.getProperties.bind(this);
     this.setProperty = this.setProperty.bind(this);
     this.getProperty = this.getProperty.bind(this);
-    // this.setRelatedProperties = this.setRelatedProperties.bind(this);
   }
 
   componentDidMount() {
@@ -48,31 +46,24 @@ class App extends React.Component {
     console.log(this.state.property)
   }
 
-  // setRelatedProperties() {
-  //   for (let i = 0; i < this.state.property.similarPlaces.length; i += 1) {
-  //     let similarPlace = this.state.property.similarPlaces[i]
-  //     for (let j = 0; j < this.state.properties.length; j += 1) {
-  //       let property = this.state.properties[i];
-  //       if (similarPlace === property.propertyId) {
-  //         this.setState({ relatedProperties: [...this.state.relatedProperties, property]});
-  //       }
-  //     }
-  //   }
-
-  // }
-
   render() {
     return (
-      <Wrapper>
-        <MorePlaces places={this.state.property} />
-      </Wrapper>
+      <div>
+        <Header>More places to stay </Header>
+        <Wrapper>
+          <MorePlaces places={this.state.property} />
+        </Wrapper>
+      </div>
     )
   }
 }
-
+const Header = styled.h2`
+  font-weight: 100px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+`;
 const Wrapper = styled.div`
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `;
 
 
