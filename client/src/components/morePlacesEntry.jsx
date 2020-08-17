@@ -1,64 +1,88 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// let MorePlacesEntry = (props) => (
-  // <Card>
-  // {if(props.place.isSuperHost) <SuperHost></SuperHost>}
-  //   <ImageContainer>
-  //     <HeartImg src={heartImg} />
-  //     <a href={`?propertyId=${props.place.propertyId}`}><Image src={props.place.img} /></a>
-  //   </ImageContainer>
-  //   <div className="property-description">
-  //     <div>{props.place.propertyType} • {props.place.numOfRooms} beds</div>
-  //     <div><StarImg src={starImg} /> {props.place.rating} <NumRatings>({props.place.numOfRatings})</NumRatings></div>
-  //     <div>{props.place.description}</div>
-  //     <div><Price>${props.place.price}</Price> / night</div>
-  //   </div>
-  // </Card>
-// )
-class MorePlacesEntry extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    if (this.props.place.isSuperHost) {
+let MorePlacesEntry = (props) => {
+  switch(props.place.isSuperHost) {
+    case true:
       return (
         <Card>
           <ImageContainer>
             <SuperHost><SuperHostCon>SUPERHOST</SuperHostCon></SuperHost>
             <HeartImg src={heartImg} />
-            <a href={`?propertyId=${this.props.place.propertyId}`}><Image src={this.props.place.img} /></a>
+            <a href={`?propertyId=${props.place.propertyId}`}><Image src={props.place.img} /></a>
           </ImageContainer>
           <div className="property-description">
-            <div>{this.props.place.propertyType} • {this.props.place.numOfRooms} beds</div>
-            <div><StarImg src={starImg} /> {this.props.place.rating} <NumRatings>({this.props.place.numOfRatings})</NumRatings></div>
-            <div>{this.props.place.description}</div>
-            <div><Price>${this.props.place.price}</Price> / night</div>
+            <div>{props.place.propertyType} • {props.place.numOfRooms} beds</div>
+            <div><StarImg src={starImg} /> {props.place.rating} <NumRatings>({props.place.numOfRatings})</NumRatings></div>
+            <div>{props.place.description}</div>
+            <div><Price>${props.place.price}</Price> / night</div>
           </div>
         </Card>
       )
-    } else {
+      break;
+    case false:
       return (
         <Card>
           <ImageContainer>
             <HeartImg src={heartImg} />
-            <a href={`?propertyId=${this.props.place.propertyId}`}><Image src={this.props.place.img} /></a>
+            <a href={`?propertyId=${props.place.propertyId}`}><Image src={props.place.img} /></a>
           </ImageContainer>
           <div className="property-description">
-            <div>{this.props.place.propertyType} • {this.props.place.numOfRooms} beds</div>
-            <div><StarImg src={starImg} /> {this.props.place.rating} <NumRatings>({this.props.place.numOfRatings})</NumRatings></div>
-            <div>{this.props.place.description}</div>
-            <div><Price>${this.props.place.price}</Price> / night</div>
+            <div>{props.place.propertyType} • {props.place.numOfRooms} beds</div>
+            <div><StarImg src={starImg} /> {props.place.rating} <NumRatings>({props.place.numOfRatings})</NumRatings></div>
+            <div>{props.place.description}</div>
+            <div><Price>${props.place.price}</Price> / night</div>
           </div>
         </Card>
       )
-    }
+      break;
+    default:
+      return null;
   }
 }
+// class MorePlacesEntry extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+
+//     };
+//   }
+
+//   render() {
+//     if (this.props.place.isSuperHost) {
+//       return (
+//         <Card>
+//           <ImageContainer>
+//             <SuperHost><SuperHostCon>SUPERHOST</SuperHostCon></SuperHost>
+//             <HeartImg src={heartImg} />
+//             <a href={`?propertyId=${this.props.place.propertyId}`}><Image src={this.props.place.img} /></a>
+//           </ImageContainer>
+//           <div className="property-description">
+//             <div>{this.props.place.propertyType} • {this.props.place.numOfRooms} beds</div>
+//             <div><StarImg src={starImg} /> {this.props.place.rating} <NumRatings>({this.props.place.numOfRatings})</NumRatings></div>
+//             <div>{this.props.place.description}</div>
+//             <div><Price>${this.props.place.price}</Price> / night</div>
+//           </div>
+//         </Card>
+//       )
+//     } else {
+//       return (
+//         <Card>
+//           <ImageContainer>
+//             <HeartImg src={heartImg} />
+//             <a href={`?propertyId=${this.props.place.propertyId}`}><Image src={this.props.place.img} /></a>
+//           </ImageContainer>
+//           <div className="property-description">
+//             <div>{this.props.place.propertyType} • {this.props.place.numOfRooms} beds</div>
+//             <div><StarImg src={starImg} /> {this.props.place.rating} <NumRatings>({this.props.place.numOfRatings})</NumRatings></div>
+//             <div>{this.props.place.description}</div>
+//             <div><Price>${this.props.place.price}</Price> / night</div>
+//           </div>
+//         </Card>
+//       )
+//     }
+//   }
+// }
 let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Screen+Shot+2020-08-14+at+9.41.44+PM.png";
 let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
 
