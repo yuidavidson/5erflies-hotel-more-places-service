@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 let MorePlacesEntry = (props) => (
   <Card>
-    <div className="image">
+    <ImageContainer>
       <HeartImg src={heartImg} />
       <a href={`?propertyId=${props.place.propertyId}`}><Image src={props.place.img} /></a>
-    </div>
+    </ImageContainer>
     <div className="property-description">
       <div>{props.place.propertyType} • {props.place.numOfRooms} beds</div>
       <div><StarImg src={starImg} /> {props.place.rating} <NumRatings>({props.place.numOfRatings})</NumRatings></div>
@@ -34,6 +34,10 @@ const Card = styled.div`
   margin: 0 10px 0 10px;
 `;
 
+const ImageContainer = styled.div`
+  position: relative;
+`
+
 const Image = styled.img`
   height: 100% || 120px;
   width: 100%;
@@ -45,6 +49,8 @@ const HeartImg = styled.img`
   height: 14px;
   width: 16px;
   position: absolute;
+  bottom: 88%;
+  left: 92%;
   z-index: 1;
 `
 const StarImg = styled.img`
