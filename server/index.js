@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const db = require('../database/index.js');
 
-const PORT = 3000;
+const PORT = 3013;
 
 // create middleware
 let logRequests = (req, res, next) => {
@@ -16,8 +16,9 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 
 // create routes
+
+//GET request for one property
 app.get('/test1', (req, res) => {
-  console.log(req.query)
   db.getProperty(req.query, (err, results) => {
     if (err) {
       console.log(err);
@@ -27,6 +28,7 @@ app.get('/test1', (req, res) => {
   })
 })
 
+//GET request for all properties
 app.get('/test-seeder', (req, res) => {
   db.getAllProperties( (err, results) => {
     if(err) {

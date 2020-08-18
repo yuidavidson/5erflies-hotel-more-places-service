@@ -1,13 +1,14 @@
 const faker = require('faker');
 const db = require('./index.js');
+const mockData = require('../mockData.js')
 
 const seeder = () => {
   for (let i = 0; i < 100; i++) {
     const newPlace = new db.relatedPlaces({
       propertyId: i,
-      img: faker.address.propertyImg(),
+      img: faker.random.arrayElement(mockData.propertyImg),
       isSuperHost: faker.random.boolean(),
-      propertyType: faker.address.propertyType(),
+      propertyType: faker.random.arrayElement(mockData.propertyType),
       numOfRooms: faker.random.number({
         min: 1,
         max: 5,
@@ -17,7 +18,7 @@ const seeder = () => {
         max: 5,
       }),
       numOfRatings: faker.random.number(300),
-      description: faker.address.propertyDescription(),
+      description: faker.random.arrayElement(mockData.propertyDescription),
       price: faker.random.number({
         min: 50,
         max: 400,
@@ -26,7 +27,7 @@ const seeder = () => {
 
     newPlace.save((err) => {
       if (err) {
-        console.log('err');
+        console.log(err);
       }
     });
   }
