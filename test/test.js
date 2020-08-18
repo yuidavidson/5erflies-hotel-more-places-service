@@ -102,6 +102,16 @@ describe('App Test Suite', () => {
 
   })
 
+  it('should get the 12 related properties', () => {
+    let wrapper = shallow(<App /> );
+    let instance = wrapper.instance();
+    expect(wrapper.state('property')).toHaveLength(0);
+    instance.getProperty();
+    setTimeout( () => {
+      expect(wrapper.state('property')).toHaveLength(12);
+    }, 1000)
+  })
+
 }),
 
 describe('MorePlaces Test Suite', () => {
